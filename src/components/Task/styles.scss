@@ -3,7 +3,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin: 20px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .task-top{
@@ -17,10 +17,33 @@
 .task-top-right{
     width: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    color: rgb(164, 164, 164);
+    font-size: 20px;
+    margin: 0px 5px;
 }
 
 .line{
-    
+    margin: 10px 0px;
+    border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+.blue{
+    color: rgb(0, 103, 230);
+}
+
+.task-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete{
+    font-size: 20px;
+    margin: 0px 4px;
+}
+
+.description{
+    color: gray;
+    font-size: 13px;
 }

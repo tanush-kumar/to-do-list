@@ -23,10 +23,22 @@ const TasksCard = () => {
 		});
 	};
 
+	const markAsDone = (index) => {
+		setTasks((currentTasks) => {
+			return currentTasks.map((task, i) => {
+				return i !== index ? task : { ...task, completed: !task.completed };
+			});
+		});
+	};
+
 	return (
 		<div className='tasks-card'>
 			<Header setAddModal={setAddModal} />
-			<TasksList tasks={tasks} deleteTask={deleteTask} />
+			<TasksList
+				tasks={tasks}
+				deleteTask={deleteTask}
+				markAsDone={markAsDone}
+			/>
 			{adddModal && <AddModal addTask={addTask} onClose={setAddModal} />}
 		</div>
 	);
