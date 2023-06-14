@@ -10,5 +10,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(197,211,223,1) 100%);
+    position: relative;
+	background: linear-gradient(
+		180deg,
+		rgba(242, 242, 242, 1) 0%,
+		rgb(225, 229, 233) 100%
+	);
 }

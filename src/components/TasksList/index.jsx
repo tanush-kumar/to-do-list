@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Task from '../Task';
+import './styles.scss';
 
-const TasksList = () => {
-  return (
-    <div>TasksList</div>
-  )
-}
+const TasksList = (props) => {
+	const allTasks = props.tasks.map((task) => {
+		return <Task task={task} />;
+	});
 
-export default TasksList
+	return <div className='tasks-list'>{allTasks}</div>;
+};
+
+export default TasksList;

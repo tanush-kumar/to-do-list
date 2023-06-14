@@ -1,8 +1,11 @@
 import React from 'react'
+import './styles.scss'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div className='header'>
+        <button>Add a task</button>
+    </div>
   )
 }
 
