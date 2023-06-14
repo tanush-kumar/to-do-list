@@ -1,12 +1,18 @@
-import React from 'react'
-import './styles.scss'
+import React from 'react';
+import './styles.scss';
 
-const Header = () => {
-  return (
-    <div className='header'>
-        <button>Add a task</button>
-    </div>
-  )
-}
+const Header = (props) => {
+	return (
+		<div className='header'>
+			<button
+				onClick={() => {
+					props.setAddModal(true);
+				}}
+			>
+				Add a task
+			</button>
+		</div>
+	);
+};
 
-export default Header
+export default Header;
