@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Layout/MoadalLayout';
+import { BsPlusCircleFill } from 'react-icons/bs';
+import './styles.scss'
 
 const AddModal = (props) => {
 	const [inputData, setInputData] = useState({
@@ -19,6 +21,7 @@ const AddModal = (props) => {
 	return (
 		<Modal onClose={props.onClose}>
 			<div className='add-modal'>
+                <p>Enter task details...</p>
 				<input
 					type='text'
 					placeholder='Title'
@@ -37,14 +40,15 @@ const AddModal = (props) => {
 						handleChange(e);
 					}}
 				/>
-				<button
+				<div
+					className='add-button'
 					onClick={() => {
-						props.addTask(inputData.title, inputData.description)
-                        props.onClose(false);
+						props.addTask(inputData.title, inputData.description);
+						props.onClose(false);
 					}}
 				>
-					Add Task
-				</button>
+					<span>Add a task</span> <BsPlusCircleFill />
+				</div>
 			</div>
 		</Modal>
 	);
