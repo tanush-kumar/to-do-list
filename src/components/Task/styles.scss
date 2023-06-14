@@ -47,3 +47,24 @@
     color: gray;
     font-size: 13px;
 }
+
+.delete-edit-con{
+    display: flex;
+    align-items: center;
+
+    div{
+        cursor: pointer;
+    }
+}
+
+.mark-button{
+    border: none;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    span{
+        margin-right: 5px;
+    }
+}

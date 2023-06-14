@@ -2,8 +2,17 @@ import React from 'react';
 import './styles.scss';
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
+import { MdEditSquare } from 'react-icons/md';
 
-const Task = ({ task, index, deleteTask, markAsDone}) => {
+const Task = ({
+	task,
+	index,
+	deleteTask,
+	markAsDone,
+	setDeleteModal,
+	setActiveTask,
+	setEditModal,
+}) => {
 	const { title, description, completed } = task;
 	return (
 		<div className='task'>
@@ -12,32 +21,49 @@ const Task = ({ task, index, deleteTask, markAsDone}) => {
 					<div>{title}</div>
 					<div className='description'>{description}</div>
 				</div>
-				<div className={`task-top-right${completed ? ' blue' : ''}`}>
+				<div
+					onClick={() => {
+						markAsDone(index);
+					}}
+					className={`task-top-right${completed ? ' blue' : ''}`}
+				>
 					<BsCheckCircleFill />
 				</div>
 			</div>
 			<div className='line'></div>
 			<div className='task-bottom'>
 				<button
+					className='mark-button add-button'
 					onClick={() => {
 						markAsDone(index);
 					}}
 				>
 					{!completed ? (
 						<>
-							Mark as done <BsCheckCircleFill />
+							<span>Mark as done</span> <BsCheckCircleFill />
 						</>
 					) : (
 						<>Unmark</>
 					)}
 				</button>
-				<div
-					className='delete'
-					onClick={() => {
-						deleteTask(index);
-					}}
-				>
-					<MdDelete />
+				<div className='delete-edit-con'>
+					<div
+						onClick={() => {
+							setEditModal(true);
+							setActiveTask(index);
+						}}
+					>
+						<MdEditSquare />
+					</div>
+					<div
+						className='delete'
+						onClick={() => {
+							setDeleteModal(true);
+							setActiveTask(index);
+						}}
+					>
+						<MdDelete />
+					</div>
 				</div>
 			</div>
 		</div>

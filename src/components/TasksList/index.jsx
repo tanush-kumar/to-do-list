@@ -10,6 +10,9 @@ const TasksList = (props) => {
 				index={index}
 				deleteTask={props.deleteTask}
 				markAsDone={props.markAsDone}
+				setDeleteModal={props.setDeleteModal}
+				setActiveTask={props.setActiveTask}
+				setEditModal={props.setEditModal}
 			/>
 		);
 	});
