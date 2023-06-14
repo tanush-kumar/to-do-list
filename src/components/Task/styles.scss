@@ -5,3 +5,22 @@
     border-radius: 20px;
     padding: 20px;
 }
+
+.task-top{
+    display: flex;
+}
+
+.task-top-left{
+    width: 80%;
+}
+
+.task-top-right{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    
+}
